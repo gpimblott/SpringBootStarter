@@ -1,0 +1,41 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+mainClassName = 'com.pimblott.samples.spring.boot.SpringBootApplication'
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.2.3.RELEASE")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    baseName = 'SpringBootStarter'
+    version = '0.1.0-SNAPSHOT'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
