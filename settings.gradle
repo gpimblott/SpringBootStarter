@@ -1,2 +1,4 @@
 rootProject.name = 'SpringBootStarter'
+include 'spring-boot-example-service'
+include 'spring-boot-example-client'
 

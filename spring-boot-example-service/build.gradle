@@ -17,7 +17,7 @@ apply plugin: 'spring-boot'
 sourceCompatibility = 1.7
 version = '1.0'
 
-mainClassName = 'com.pimblott.samples.spring.boot.SpringBootApplication'
+mainClassName = 'com.pimblott.samples.spring.boot.service.ExampleServiceApplication'
 
 repositories {
     jcenter()
