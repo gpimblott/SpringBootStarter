@@ -8,6 +8,6 @@ import org.springframework.boot.SpringApplication;
 public class SpringBootApplication {
 
     public static void main( String[] args) {
-        SpringApplication.run(Example.class, args);
+        SpringApplication.run(ExampleService.class, args);
     }
 }
