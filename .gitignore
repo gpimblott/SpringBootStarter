@@ -2,3 +2,4 @@
 .idea/
 spring-boot-example-service/build/
 spring-boot-example-client/build/
+spring-boot-example-domain/build/

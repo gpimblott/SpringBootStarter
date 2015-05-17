@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.pimblott.samples.spring.boot.service.services.ExampleService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
