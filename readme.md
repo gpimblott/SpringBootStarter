@@ -20,6 +20,14 @@ It demonstrates the following:
  * 'Fat JAR' deployment packaging
  * Default logging to both console and file
  
+## Structure
+
+The application is actually split into 3 project
+
+ * Main Service
+ * Domain models passed used by the service and client
+ * Client example application
+ 
 ## Building the application
 The application can be built outside of an IDE using the standard Gradle commands
 
