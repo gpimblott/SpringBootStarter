@@ -1,0 +1,4 @@
+.gradle/
+.idea/
+spring-boot-example-service/build/
+spring-boot-example-client/build/
