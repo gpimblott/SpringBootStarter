@@ -15,6 +15,8 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 version = '1.0'
 
 mainClassName = 'com.pimblott.samples.spring.boot.service.ExampleServiceApplication'
@@ -30,9 +32,10 @@ dependencies {
         exclude module: "spring-boot-starter-tomcat"
     }
     compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile("junit:junit")
 }
 
 jar {

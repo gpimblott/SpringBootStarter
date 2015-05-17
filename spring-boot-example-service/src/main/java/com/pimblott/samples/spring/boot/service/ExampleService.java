@@ -10,7 +10,7 @@ public class ExampleService {
 
     @RequestMapping("/")
     String home() {
-        return "Hello World!";
+        return "Greetings from Spring Boot!";
     }
 
 }
