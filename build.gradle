@@ -1,0 +1,68 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+
+version = '1.0'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
+allprojects {
+
+    task hello << { task -> println "I'm $task.project.name" }
+}
+
+
+subprojects {
+    apply plugin: "java"
+
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+}
+
+
+project(':spring-boot-example-service') {
+    apply plugin: 'spring-boot'
+
+    mainClassName = 'com.pimblott.samples.spring.boot.service.ExampleServiceApplication'
+
+    dependencies {
+        // This project depends on the common domain model
+        compile project(':spring-boot-example-domain' )
+
+        compile("org.springframework.boot:spring-boot-starter-web:1.2.3.RELEASE") {
+            exclude module: "spring-boot-starter-tomcat"
+        }
+        compile("org.springframework.boot:spring-boot-starter-jetty")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile("org.springframework.boot:spring-boot-starter-security")
+
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+        testCompile("junit:junit")
+    }
+
+    jar {
+        baseName = 'SpringBootStarter'
+        version = '0.1.0-SNAPSHOT'
+    }
+}
+
+project(':spring-boot-example-domain') {
+    task helloDomain << { task -> println "Sub 1 $task.project.name" }
+}
+
+project(':spring-boot-example-client') {
+    task helloClient << { task -> println "Sub 2 $task.project.name" }
+}
