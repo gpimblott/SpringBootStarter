@@ -32,6 +32,7 @@ The application is actually split into 3 project
 The application can be built outside of an IDE using the standard Gradle commands
 
 * gradlew build
+* gradle build (mac osx/unix)
 
 The resulting application will be placed in the sub directory 'build/libs'
 
@@ -39,6 +40,7 @@ The resulting application will be placed in the sub directory 'build/libs'
 To run the standard Gradle utilities can be used
 
  * gradlew run
+ * gradle run (mac osx/unix)
 
 ## Trying it out
 
