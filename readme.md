@@ -30,6 +30,12 @@ The application is actually split into 3 project
  * Client example application
 
 ---
+## Configuration
+
+The application comes with an embedded config file, application.properties, in the JAR file.
+To replace this a new configuration should be placed in a 'config' sub-directory of the main directory
+
+---
 ## Building the application
 The application can be built outside of an IDE using the standard Gradle commands
 
