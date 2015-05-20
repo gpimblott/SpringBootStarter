@@ -19,7 +19,8 @@ It demonstrates the following:
  * Standard and custom health checks
  * 'Fat JAR' deployment packaging
  * Default logging to both console and file
- 
+
+---
 ## Structure
 
 The application is actually split into 3 project
@@ -27,7 +28,8 @@ The application is actually split into 3 project
  * Main Service
  * Domain models used by the service and client
  * Client example application
- 
+
+---
 ## Building the application
 The application can be built outside of an IDE using the standard Gradle commands
 
@@ -40,6 +42,7 @@ To run the standard Gradle utilities can be used
 
  * gradlew run
 
+---
 ## Trying it out
 
 Once the application is running it will expose several REST services, all of which are protected by basic authentication.  If you
@@ -54,9 +57,9 @@ User: user3 Password: password
 
  * http://localhost:8080/
 
- This will display a hello message.
+This will display a hello message.
 
-The metrics services are also available on the following ports
+The metrics services are also available on the following paths
 
  * http://localhost:8080/health
  * http://localhost:8080/metrics
@@ -70,7 +73,6 @@ The metrics services are also available on the following ports
  * http://localhost:8080/mappings
  * http://localhost:8080/shutdown
 
-
 ## More complex security examples
 
 There is also a default 'person' service that demonstrates more complex security scenarios.
@@ -81,4 +83,4 @@ Only admin user can access this service and it will list all the defined users.
 
  * http://localhost:8080/person/{username}
 
-Only the authenticated user can access their own profile, or the admin user
+Only the authenticated user, or admin, can access the profile
