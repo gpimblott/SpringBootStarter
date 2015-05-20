@@ -31,22 +31,54 @@ The application is actually split into 3 project
 ## Building the application
 The application can be built outside of an IDE using the standard Gradle commands
 
-* gradlew build
+ * gradlew build
 
 The resulting application will be placed in the sub directory 'build/libs'
 
-##Running the application
+## Running the application
 To run the standard Gradle utilities can be used
 
  * gradlew run
 
 ## Trying it out
 
-Once the application is running it will expose a default REST service on port 8080
+Once the application is running it will expose several REST services, all of which are protected by basic authentication.  If you
+are using a browser you will be prompted for credentials, you could also use a tool such as Postman and enter the basic authentication
+credentials.
 
-http://localhost:8080
+Default users configured.
+User: admin Password: password
+User: user1 Password: password
+User: user2 Password: password
+User: user3 Password: password
+
+ * http://localhost:8080/
+
+ This will display a hello message.
 
 The metrics services are also available on the following ports
 
  * http://localhost:8080/health
- 
+ * http://localhost:8080/metrics
+ * http://localhost:8080/env
+ * http://localhost:8080/autoconfig
+ * http://localhost:8080/beans
+ * http://localhost:8080/configprops
+ * http://localhost:8080/dump
+ * http://localhost:8080/info
+ * http://localhost:8080/trace
+ * http://localhost:8080/mappings
+ * http://localhost:8080/shutdown
+
+
+## More complex security examples
+
+There is also a default 'person' service that demonstrates more complex security scenarios.
+
+ * http://localhost:8080/person/
+
+Only admin user can access this service and it will list all the defined users.
+
+ * http://localhost:8080/person/{username}
+
+Only the authenticated user can access their own profile, or the admin user
