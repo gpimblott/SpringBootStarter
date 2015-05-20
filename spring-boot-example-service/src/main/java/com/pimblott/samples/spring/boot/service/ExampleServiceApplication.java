@@ -7,7 +7,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Template Spring Boot application to provide REST services.
+ *
+ * Includes all the necessary production features including
+ * <li>Security</li>
+ * <li>Monitoring</li>
+ * <li>Health checking</li>
+ *
  * Main Spring Boot class - Everything is auto configured
+ *
  */
 @Configuration
 @EnableAutoConfiguration(exclude = {JmxAutoConfiguration.class})
