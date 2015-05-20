@@ -65,19 +65,20 @@ User: user3 Password: password
 
 This will display a hello message.
 
-The metrics services are also available on the following paths
+The metrics services are also available on the following paths and can only be accessed by a user with
+the 'ADMIN' role.
 
- * http://localhost:8080/health
- * http://localhost:8080/metrics
- * http://localhost:8080/env
- * http://localhost:8080/autoconfig
- * http://localhost:8080/beans
- * http://localhost:8080/configprops
- * http://localhost:8080/dump
- * http://localhost:8080/info
- * http://localhost:8080/trace
- * http://localhost:8080/mappings
- * http://localhost:8080/shutdown
+ * http://localhost:8080/admin/health
+ * http://localhost:8080/admin/metrics
+ * http://localhost:8080/admin/env
+ * http://localhost:8080/admin/autoconfig
+ * http://localhost:8080/admin/beans
+ * http://localhost:8080/admin/configprops
+ * http://localhost:8080/admin/dump
+ * http://localhost:8080/admin/info
+ * http://localhost:8080/admin/trace
+ * http://localhost:8080/admin/mappings
+ * http://localhost:8080/admin/shutdown
 
 ## More complex security examples
 
