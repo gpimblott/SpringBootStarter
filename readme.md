@@ -25,7 +25,7 @@ It demonstrates the following:
 The application is actually split into 3 project
 
  * Main Service
- * Domain models passed used by the service and client
+ * Domain models used by the service and client
  * Client example application
  
 ## Building the application

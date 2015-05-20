@@ -17,8 +17,6 @@ task wrapper(type: Wrapper) {
 }
 
 allprojects {
-
-    task hello << { task -> println "I'm $task.project.name" }
 }
 
 
@@ -60,7 +58,11 @@ project(':spring-boot-example-service') {
 }
 
 project(':spring-boot-example-domain') {
-    task helloDomain << { task -> println "Sub 1 $task.project.name" }
+
+    jar {
+        baseName = 'SpringBootStarterDomain'
+        version = '0.1.0-SNAPSHOT'
+    }
 }
 
 project(':spring-boot-example-client') {

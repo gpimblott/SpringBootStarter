@@ -11,10 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class FakeUserDetailsService implements UserDetailsService {
@@ -24,7 +21,11 @@ public class FakeUserDetailsService implements UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(FakeUserDetailsService.class);
 
     public FakeUserDetailsService() {
+        fakeUsers.put( "admin" , new Person( "admin" , "The" , "Boss" ));
         fakeUsers.put( "user1" , new Person( "user1" , "Adam" , "Smith" ));
+        fakeUsers.put( "user2" , new Person( "user2" , "Gordon" , "Colins" ));
+        fakeUsers.put( "user3" , new Person( "user3" , "Sally" , "Smith" ));
+        fakeUsers.put( "user4" , new Person( "user4" , "Tracey" , "Colins" ));
     }
 
     /**
@@ -50,16 +51,6 @@ public class FakeUserDetailsService implements UserDetailsService {
         return user;
     }
 
-    public Person getPerson(String username) throws UsernameNotFoundException {
-        Person person = fakeUsers.get(username);
-
-        if (person == null) {
-            LOGGER.info("Username " + username + " NOT found");
-            throw new UsernameNotFoundException("Username " + username + " not found");
-        }
-        return person;
-    }
-
     /**
      *
      * @param username
@@ -76,5 +67,20 @@ public class FakeUserDetailsService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority("ROLE_BASIC"));
         }
         return authorities;
+    }
+
+    public Person getPerson(String username) throws UsernameNotFoundException {
+        Person person = fakeUsers.get(username);
+
+        if (person == null) {
+            LOGGER.info("Username " + username + " NOT found");
+            throw new UsernameNotFoundException("Username " + username + " not found");
+        }
+        return person;
+    }
+
+
+    public Collection<Person> list() {
+        return fakeUsers.values();
     }
 }

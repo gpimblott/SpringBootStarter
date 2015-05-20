@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import java.util.Collection;
 
 /**
- * Created by Gordon on 10/03/2015.
+ *
  */
 public class MyUser extends User {
 
