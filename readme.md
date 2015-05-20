@@ -20,8 +20,9 @@ It demonstrates the following:
  * 'Fat JAR' deployment packaging
  * Default logging to both console and file
 
----
+
 ## Structure
+---
 
 The application is actually split into 3 project
 
@@ -29,14 +30,17 @@ The application is actually split into 3 project
  * Domain models used by the service and client
  * Client example application
 
----
+
 ## Configuration
+---
 
 The application comes with an embedded config file, application.properties, in the JAR file.
 To replace this a new configuration should be placed in a 'config' sub-directory of the main directory
 
----
+
 ## Building the application
+---
+
 The application can be built outside of an IDE using the standard Gradle commands
 
  * gradlew build
@@ -48,8 +52,9 @@ To run the standard Gradle utilities can be used
 
  * gradlew run
 
----
+
 ## Trying it out
+---
 
 Once the application is running it will expose several REST services, all of which are protected by basic authentication.  If you
 are using a browser you will be prompted for credentials, you could also use a tool such as Postman and enter the basic authentication
@@ -81,6 +86,7 @@ the 'ADMIN' role.
  * http://localhost:8080/admin/shutdown
 
 ## More complex security examples
+---
 
 There is also a default 'person' service that demonstrates more complex security scenarios.
 
